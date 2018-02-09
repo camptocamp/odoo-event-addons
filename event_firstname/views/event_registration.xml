@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_event_registration_form_inherit_firstname">
+        <field name="name">event.registration.form</field>
+        <field name="model">event.registration</field>
+        <field name="inherit_id" ref="event.view_event_registration_form" />
+        <field name="name">event.registration.view.form.inherit.firstname</field>
+        <field name="arch" type="xml">
+
+            <field name="name" position="replace">
+
+                <field name="firstname"/>
+                <field name="lastname"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_event_registration_tree_inherit_firstname">
+        <field name="name">event.registration.tree</field>
+        <field name="model">event.registration</field>
+        <field name="inherit_id" ref="event.view_event_registration_tree" />
+
+        <field name="arch" type="xml">
+            <field name="name" position="replace">
+                <field name="firstname"/>
+                <field name="lastname"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_registration_search_inherit_firstname">
+        <field name="name">event.registration.search</field>
+        <field name="model">event.registration</field>
+        <field name="inherit_id" ref="event.view_registration_search" />
+
+        <field name="arch" type="xml">
+            <xpath expr="//search/group" position="inside">
+                <filter string="Lastname" domain="[]" context="{'group_by': 'lastname'}"/>
+                <filter string="Firstname" domain="[]" context="{'group_by': 'firstname'}"/>
+            </xpath>
+        </field>
+    </record>
+
+        <record id="event_event_registration_pivot_inherit_firstname" model="ir.ui.view" >
+            <field name="name">event.registration.pivot</field>
+            <field name="model">event.registration</field>
+            <field name="inherit_id" ref="event.view_event_registration_pivot" />
+            <field name="arch" type="xml">
+                <pivot string="Registration" display_quantity="True">
+                    <xpath expr="//field[@name='name']" position="replace"> 
+                        <!--noop-->
+                    </xpath>
+                </pivot>
+            </field>
+        </record>
+</odoo>
