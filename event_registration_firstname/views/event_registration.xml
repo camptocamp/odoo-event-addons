@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_event_registration_form_inherit_firstname">
+        <field name="name">event.registration.form</field>
+        <field name="model">event.registration</field>
+        <field name="inherit_id" ref="event.view_event_registration_form" />
+        <field name="name">event.registration.view.form.inherit.firstname</field>
+        <field name="arch" type="xml">
+
+            <field name="name" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="name" position="after">
+                <field name="firstname"/>
+                <field name="lastname"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_event_registration_tree_inherit_firstname">
+        <field name="name">event.registration.tree</field>
+        <field name="model">event.registration</field>
+        <field name="inherit_id" ref="event.view_event_registration_tree" />
+
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="name" position="after">
+                <field name="firstname"/>
+                <field name="lastname"/>
+            </field>
+            <field name="partner_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_registration_search_inherit_firstname">
+        <field name="name">event.registration.search</field>
+        <field name="model">event.registration</field>
+        <field name="inherit_id" ref="event.view_registration_search" />
+
+        <field name="arch" type="xml">
+            <xpath expr="//search/filter[last()]" position="after">
+                <field name="firstname" string="Firstname" filter_domain="[('firstname', 'ilike', self)]"/>
+                <field name="lastname" string="Lastname" filter_domain="[('lastname', 'ilike', self)]"/>
+            </xpath>
+            <xpath expr="//search/group" position="inside">
+                <filter string="Lastname" domain="[]" context="{'group_by': 'lastname'}"/>
+                <filter string="Firstname" domain="[]" context="{'group_by': 'firstname'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
