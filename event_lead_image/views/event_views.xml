@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record model="ir.ui.view" id="view_event_form_inherit_image">
+            <field name="name">event.event.form</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="event.view_event_form" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[hasclass('oe_title')]" position="attributes">
+                    <attribute name="style">float: left; width: 100%</attribute>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_title')]" position="after">
+                    <div class="oe_leadimage pull-right">
+                        <field name="lead_image" class="oe_avatar" widget="image" />
+                    </div>
+                </xpath>
+            </field>
+        </record>
+</odoo>
