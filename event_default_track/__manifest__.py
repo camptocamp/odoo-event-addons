@@ -14,4 +14,4 @@
         'website_event_track',
     ],
     'installable': True,
- }
+}
