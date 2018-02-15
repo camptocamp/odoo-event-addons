@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/camptocamp/odoo-event-addons.svg?branch=11.0)](https://travis-ci.org/OCA/odoo-event-addons)
+
+
 # odoo-event-addons
 Our collection of Odoo events management addons
 
