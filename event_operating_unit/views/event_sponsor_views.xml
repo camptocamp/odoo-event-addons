@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_event_sponsor_tree_inherit_ou">
+        <field name="name">event.sponsor.tree</field>
+        <field name="model">event.sponsor</field>
+        <field name="inherit_id" ref="website_event_track.view_event_sponsor_tree" />
+        <field name="arch" type="xml">
+            <tree>
+                <field name="operating_unit_id"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
