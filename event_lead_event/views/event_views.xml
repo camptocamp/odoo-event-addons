@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_event_form_inherit_lead_event">
+        <field name="name">event.event.form</field>
+        <field name="model">event.event</field>
+        <field name="inherit_id" ref="event.view_event_form" />
+        <field name="arch" type="xml">
+            <button name="website_publish_button" position="before">
+
+                <button name="%(action_event_lead_event)d"
+                        type="action"
+                        class="oe_stat_button"
+                        icon="fa-bookmark">
+                        <span>
+                            <field name="lead_event" widget="boolean_button" options='{"terminology": { "string_true": "Lead Event", "hover_true": "Clear Lead Event", "string_false": "Lead Event", "hover_false": "Make Lead Event" }}'/>
+                        </span>
+                </button>
+            </button>
+        </field>
+    </record>
+</odoo>
