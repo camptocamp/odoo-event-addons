@@ -6,13 +6,17 @@
         <field name="arch" type="xml">
             <form string="Change Lead Event">
                 <group>
+                    <field name="same_event" invisible="1" />
                     <field name="old_lead_id" />
-                    <field name="event_id" />
+                    <field name="event_id" attrs="{'invisible': [('same_event', '=', True)]}" />
                 </group>
-                <p>
-                    The current lead event will be replaced with the one specified as new lead event.
-                    If both are the same the lead event will be set to nothing.
-                </p>
+                    <div class="alert alert-info" attrs="{'invisible': [('same_event', '!=', True)]}">
+                        Remove the lead event status from the current event.
+                    </div>
+                    <div class="alert alert-info" attrs="{'invisible': [('same_event', '=', True)]}">
+                        Change the lead event status to the new Event.
+                    </div>
+
                 <footer>
                     <button string="Change lead event" name="set_lead_event" type="object" default_focus="1" class="btn-primary"/>
                     <button string="Cancel" class="btn-default" special="cancel"/>

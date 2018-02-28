@@ -12,13 +12,16 @@ class Event(models.Model):
     lead_event = fields.Boolean(
         string='Lead Event',
         index=True,
+        default=False,
     )
 
     @api.constrains('lead_event')
     def check_only_one_leadevent(self):
+        """Make sure we only ever have one lead event at a time."""
         if self.search_count([('lead_event', '=', True)]) > 1:
             raise ValidationError(_("There can be only one lead event."))
 
     def toggle_lead_event(self):
+        """Flip the lead event value."""
         self.ensure_one()
         self.lead_event = not self.lead_event
