@@ -8,8 +8,8 @@ Event Lead Event
 ================
 
 This module extends the functionality of `event` and `website_event_track`
-to allow setting and event as "lead event" and promote it.
-You can use the flag `lead_event` to put it on top of search results or on the homepage.
+to allow setting an event as "lead event" and promote it.
+You can use the flag `lead_event` to set it on top of search results or on the homepage.
 
 
 Bug Tracker

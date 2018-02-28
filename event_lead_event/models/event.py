@@ -16,9 +16,7 @@ class Event(models.Model):
 
     @api.constrains('lead_event')
     def check_only_one_leadevent(self):
-        self.ensure_one()
-        if self.lead_event and not self.env['event.event'].search(
-                [('lead_event', '=', True)]) == self:
+        if self.search_count([('lead_event', '=', True)]) > 1:
             raise ValidationError(_("There can be only one lead event."))
 
     def toggle_lead_event(self):

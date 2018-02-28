@@ -37,7 +37,8 @@ class TestLeadEvent(SavepointCase):
 
     def test_lead_event_swap(self):
         event_wizard = self.env['event.event.leadconfirm'].with_context(
-            {'active_id': self.event2.id}).create({})
+            {'active_id': self.event2.id,
+             'default_event_id': self.event2.id}).create({})
 
         event_wizard.set_lead_event()
         self.assertFalse(self.event1.lead_event)
@@ -46,7 +47,8 @@ class TestLeadEvent(SavepointCase):
     def test_lead_event_set(self):
         self.event1.lead_event = False
         event_wizard = self.env['event.event.leadconfirm'].with_context(
-            {'active_id': self.event2.id}).create({})
+            {'active_id': self.event2.id,
+             'default_event_id': self.event2.id}).create({})
 
         event_wizard.set_lead_event()
         self.assertFalse(self.event1.lead_event)
@@ -54,10 +56,16 @@ class TestLeadEvent(SavepointCase):
 
     def test_lead_event_unset(self):
         event_wizard = self.env['event.event.leadconfirm'].with_context(
-            {'active_id': self.event1.id}).create({})
+            {'active_id': self.event1.id,
+             'default_event_id': self.event1.id}).create({})
         event_wizard.set_lead_event()
         self.assertFalse(self.event1.lead_event)
         self.assertFalse(self.event2.lead_event)
+
+    def test_constraint_multiple_events(self):
+        events = self.env['event.event'].search([('name', '=', 'Testevent')])
+        with self.assertRaises(ValidationError):
+            events.write({'lead_event': True})
 
     @contextmanager
     def assertNotRaises(self, exc_type, message=""):

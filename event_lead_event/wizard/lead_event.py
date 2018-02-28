@@ -10,11 +10,6 @@ class LeadEventConfirm(models.TransientModel):
     def _get_current_lead_event(self):
         return self.env['event.event'].search([('lead_event', '=', True)])
 
-    def _get_event_id(self):
-        return self.env['event.event'].browse(
-            self.env.context['active_id']
-        )
-
     old_lead_id = fields.Many2one(
         comodel_name='event.event',
         string='Current Lead Event',
@@ -25,7 +20,6 @@ class LeadEventConfirm(models.TransientModel):
         comodel_name='event.event',
         string='New Lead Event',
         readonly=True,
-        default=lambda self: self._get_event_id(),
     )
 
     def set_lead_event(self):
