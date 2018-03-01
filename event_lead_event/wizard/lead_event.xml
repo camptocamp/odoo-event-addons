@@ -10,7 +10,7 @@
                     <field name="old_lead_id" />
                     <field name="event_id" attrs="{'invisible': [('same_event', '=', True)]}" />
                 </group>
-                    <div class="alert alert-info" attrs="{'invisible': [('same_event', '!=', True)]}">
+                    <div class="alert alert-info" attrs="{'invisible': [('same_event', '=', False)]}">
                         Remove the lead event status from the current event.
                     </div>
                     <div class="alert alert-info" attrs="{'invisible': [('same_event', '=', True)]}">
