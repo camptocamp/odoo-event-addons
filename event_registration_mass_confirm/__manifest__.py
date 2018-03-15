@@ -2,9 +2,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Event mass validation',
+    'name': 'Event registration mass confirm',
     'version': '11.0.1.0.0',
-    'category': 'Sales',
+    'category': 'Event',
     'license': 'AGPL-3',
     'author': 'Camptocamp, Odoo Community Association (OCA)',
     'website': 'https://github.com/camptocamp/odoo-event-addons',
