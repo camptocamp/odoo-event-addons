@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="event_registration_massvalidation_view" model="ir.ui.view">
+    <record id="event_registration_massconfirm_view" model="ir.ui.view">
         <field name="name">event.registration.massconfirm.form</field>
         <field name="model">event.registration.massconfirm</field>
         <field name="arch" type="xml">
@@ -16,7 +16,7 @@
         </field>
     </record>
 
-    <record id="action_event_registration_massvalidate" model="ir.actions.act_window">
+    <record id="action_event_registration_massconfirm" model="ir.actions.act_window">
         <field name="name">Confirm registrations</field>
         <field name="multi">true</field>
         <field name="res_model">event.registration.massconfirm</field>

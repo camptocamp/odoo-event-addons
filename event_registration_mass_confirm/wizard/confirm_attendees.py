@@ -1,6 +1,6 @@
 # Copyright 2018 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo import models, api
+from odoo import models, api, _
 
 
 class EventRegistrationMassConfirm(models.TransientModel):
@@ -17,4 +17,13 @@ class EventRegistrationMassConfirm(models.TransientModel):
 
         if len(registrations) > 0:
             registrations.confirm_registration()
-        return registrations
+
+        return {'domain': "[('id', 'in', %s)]" % registrations.ids,
+                'name': _("Mass confirmed registrations"),
+                'auto_search': True,
+                'res_model': 'event.registration',
+                'views': [
+                    (self.env.ref('event.view_event_registration_tree').id, 'tree')],
+                'search_view_id': False,
+                'type': 'ir.actions.act_window'
+                }
