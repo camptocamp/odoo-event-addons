@@ -5,9 +5,7 @@
         <field name="model">event.registration.massconfirm</field>
         <field name="arch" type="xml">
             <form string="Confirm Registrations">
-                <p>
-                Are you sure you want to confirm the registration of the selected attendees?
-                </p>
+                <p>Are you sure you want to confirm the registration of the selected attendees?</p>
                 <footer>
                     <button string="Confirm Registrations" name="confirm_registrations" type="object" default_focus="1" class="btn-primary"/>
                     <button string="Cancel" class="btn-default" special="cancel"/>
