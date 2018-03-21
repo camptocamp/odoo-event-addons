@@ -1,6 +1,7 @@
 from odoo.tests.common import SavepointCase
 from odoo.exceptions import UserError
 
+
 class TestMassConfirm(SavepointCase):
 
     @classmethod
