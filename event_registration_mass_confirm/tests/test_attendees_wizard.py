@@ -49,7 +49,7 @@ class TestMassConfirm(SavepointCase):
         wizard = self.env['event.registration.massconfirm'].with_context(
             {'active_ids': [self.reg1.id, self.reg2.id]}).create({})
         value = wizard.confirm_registrations()
-        self.assertEqual(
+        self.assertItemsEqual(
             value['domain'],
-            "[('id', 'in', [%i, %i])]" % (self.reg1.id, self.reg2.id)
+            [('id', 'in', [self.reg1.id, self.reg2.id])]
         )
