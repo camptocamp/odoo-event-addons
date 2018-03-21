@@ -1,0 +1,78 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* event_registration_mass_confirm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-15 15:47+0000\n"
+"PO-Revision-Date: 2018-03-15 16:51+0100\n"
+"Last-Translator: Timon Tschanz <timon.tschanz@camptocamp.com>\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+#. module: event_registration_mass_confirm
+#: model:ir.ui.view,arch_db:event_registration_mass_confirm.event_registration_massvalidation_view
+msgid ""
+"Are you sure you want to confirm the registration of the selected attendees?"
+msgstr "Êtes-vous sûrs de vouloir confirmer l'inscription des participants sélectionnés?"
+
+#. module: event_registration_mass_confirm
+#: model:ir.ui.view,arch_db:event_registration_mass_confirm.event_registration_massvalidation_view
+msgid "Cancel"
+msgstr "abandonner"
+
+#. module: event_registration_mass_confirm
+#: model:ir.ui.view,arch_db:event_registration_mass_confirm.event_registration_massvalidation_view
+msgid "Confirm Registrations"
+msgstr "Confirmer les inscriptions"
+
+#. module: event_registration_mass_confirm
+#: model:ir.actions.act_window,name:event_registration_mass_confirm.action_event_registration_massvalidate
+msgid "Confirm registrations"
+msgstr "Confirmer les inscriptions"
+
+#. module: event_registration_mass_confirm
+#: model:ir.model.fields,field_description:event_registration_mass_confirm.field_event_registration_massconfirm_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: event_registration_mass_confirm
+#: model:ir.model.fields,field_description:event_registration_mass_confirm.field_event_registration_massconfirm_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: event_registration_mass_confirm
+#: model:ir.model.fields,field_description:event_registration_mass_confirm.field_event_registration_massconfirm_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: event_registration_mass_confirm
+#: model:ir.model.fields,field_description:event_registration_mass_confirm.field_event_registration_massconfirm_id
+msgid "ID"
+msgstr ""
+
+#. module: event_registration_mass_confirm
+#: model:ir.model.fields,field_description:event_registration_mass_confirm.field_event_registration_massconfirm___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: event_registration_mass_confirm
+#: model:ir.model.fields,field_description:event_registration_mass_confirm.field_event_registration_massconfirm_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: event_registration_mass_confirm
+#: model:ir.model.fields,field_description:event_registration_mass_confirm.field_event_registration_massconfirm_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: event_registration_mass_confirm
+#: model:ir.model,name:event_registration_mass_confirm.model_event_registration_massconfirm
+msgid "event.registration.massconfirm"
+msgstr ""
