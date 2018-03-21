@@ -30,4 +30,3 @@ class EventRegistrationMassConfirm(models.TransientModel):
             'search_view_id': False,
             'type': 'ir.actions.act_window'
         }
-
