@@ -7,6 +7,8 @@ from odoo.exceptions import ValidationError
 
 class Event(models.Model):
 
+    _order = 'lead_event desc,date_begin'
+
     _inherit = "event.event"
 
     lead_event = fields.Boolean(
