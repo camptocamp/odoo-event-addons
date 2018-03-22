@@ -12,14 +12,26 @@ class Event(models.Model):
     lead_image_big = fields.Binary(
         "Big Lead Image",
         compute="_compute_images",
+        attachment=True,
+        store=True,
     )
     lead_image_medium = fields.Binary(
         string="Medium Lead Image",
         compute="_compute_images",
+        attachment=True,
+        store=True,
     )
     lead_image_small = fields.Binary(
         string="Small Lead Image",
         compute="_compute_images",
+        attachment=True,
+        store=True,
+    )
+    lead_image_thumb = fields.Binary(
+        string="Thumb Lead Image",
+        compute="_compute_images",
+        attachment=True,
+        store=True,
     )
 
     @api.depends("lead_image")
@@ -32,15 +44,54 @@ class Event(models.Model):
                 self.lead_image_big = self.lead_image
                 self.lead_image_medium = self.lead_image
                 self.lead_image_small = self.lead_image
+                self.lead_image_thumb = self.lead_image
 
     def _get_resized_images(self):
-        images = tools.image_get_resized_images(
-            self.lead_image,
-            big_name="lead_image_big",
-            medium_name="lead_image_medium",
-            small_name="lead_image_small",
-            return_big=True)
+        images = {
+            'lead_image_big': self._resize_image_big(),
+            'lead_image_medium': self._resize_image_medium(),
+            'lead_image_small': self._resize_image_small(),
+            'lead_image_thumb': self._resize_image_thumb(),
+        }
         return images
+
+    def _resize_image_size_map(self, key=None):
+        # TODO: make configurable
+        mapping = {
+            'big': (1600, None),
+            'medium': (1024, None),
+            'small': (600, None),
+            'thumb': (128, None),
+        }
+        return mapping.get(key, mapping)
+
+    def _resize_image_big(self):
+        return tools.image_resize_image(
+            self.lead_image,
+            size=self._resize_image_size_map('big'),
+            avoid_if_small=True
+        )
+
+    def _resize_image_medium(self):
+        return tools.image_resize_image(
+            self.lead_image,
+            size=self._resize_image_size_map('medium'),
+            avoid_if_small=True
+        )
+
+    def _resize_image_small(self):
+        return tools.image_resize_image(
+            self.lead_image,
+            size=self._resize_image_size_map('small'),
+            avoid_if_small=True
+        )
+
+    def _resize_image_thumb(self):
+        return tools.image_resize_image(
+            self.lead_image,
+            size=self._resize_image_size_map('thumb'),
+            avoid_if_small=True
+        )
 
     def lead_image_url(self, size='big'):
         return ('/web/image/{self._name}/'
