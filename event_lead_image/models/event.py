@@ -41,3 +41,7 @@ class Event(models.Model):
             small_name="lead_image_small",
             return_big=True)
         return images
+
+    def lead_image_url(self, size='big'):
+        return ('/web/image/{self._name}/'
+                '{self.id}/lead_image_{size}').format(self=self, size=size)
