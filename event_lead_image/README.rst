@@ -6,7 +6,20 @@
 Event Lead Image
 ================
 
-This Module adds the `lead_image` field to the event and provides scaled size versions (big, medium, small).
+This Module adds the `lead_image` field to the event and provides scaled size versions.
+
+Available fields/scales:
+
+* thumb (default width: 128)
+* small (default width: 600)
+* medium (default width: 1024)
+* big (default width: 1600)
+
+
+Roadmap
+=======
+
+Split to a website base module image handling and configuration.
 
 
 Bug Tracker
