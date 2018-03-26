@@ -41,10 +41,10 @@ class Event(models.Model):
                 item.update(item._get_resized_images())
             else:
                 # We don't have the images yet so we can't know their size.
-                self.lead_image_big = self.lead_image
-                self.lead_image_medium = self.lead_image
-                self.lead_image_small = self.lead_image
-                self.lead_image_thumb = self.lead_image
+                item.lead_image_big = self.lead_image
+                item.lead_image_medium = self.lead_image
+                item.lead_image_small = self.lead_image
+                item.lead_image_thumb = self.lead_image
 
     def _get_resized_images(self):
         images = {
