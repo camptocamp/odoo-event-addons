@@ -8,6 +8,7 @@ class Event(models.Model):
     lead_image = fields.Binary(
         "Lead Image",
         attachment=True,
+        copy=False,
     )
     lead_image_big = fields.Binary(
         "Big Lead Image",
