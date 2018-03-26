@@ -33,12 +33,18 @@ class Event(models.Model):
         attachment=True,
         store=True,
     )
+    has_lead_image = fields.Boolean(
+        "Has Lead Image?",
+        compute="_compute_images",
+        index=True,
+    )
 
     @api.depends("lead_image")
     def _compute_images(self):
         for item in self:
             if not self.env.context.get('bin_size'):
                 item.update(item._get_resized_images())
+                item.has_lead_image = bool(item.lead_image)
             else:
                 # We don't have the images yet so we can't know their size.
                 item.lead_image_big = self.lead_image
