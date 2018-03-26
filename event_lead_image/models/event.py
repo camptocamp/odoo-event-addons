@@ -35,7 +35,7 @@ class Event(models.Model):
     )
     has_lead_image = fields.Boolean(
         "Has Lead Image?",
-        compute="_compute_images",
+        compute="_compute_has_images",
         index=True,
     )
 
@@ -51,6 +51,11 @@ class Event(models.Model):
                 item.lead_image_medium = self.lead_image
                 item.lead_image_small = self.lead_image
                 item.lead_image_thumb = self.lead_image
+
+    @api.depends("lead_image")
+    def _compute_has_images(self):
+        for item in self:
+            item.has_lead_image = bool(item.lead_image)
 
     def _get_resized_images(self):
         images = {
