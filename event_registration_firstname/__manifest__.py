@@ -3,14 +3,13 @@
 
 {
     'name': 'Event first name and last name',
-    'version': '11.0.1.0.0',
+    'version': '11.0.1.1.0',
     'category': 'Sales',
     'license': 'AGPL-3',
     'author': 'Camptocamp, Odoo Community Association (OCA)',
     'website': 'https://github.com/camptocamp/odoo-event-addons',
     'depends': [
         'event',
-        'partner_firstname',
     ],
     'data': [
         'views/event_registration.xml',
