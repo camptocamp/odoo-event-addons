@@ -11,10 +11,12 @@ class EventRegistration(models.Model):
     firstname = fields.Char(
         string="Firstname",
         index=True,
+        required=True,
     )
     lastname = fields.Char(
         string="Lastname",
         index=True,
+        required=True,
     )
     name = fields.Char(
         string="Name",
