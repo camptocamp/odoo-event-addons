@@ -1,7 +1,7 @@
 # Copyright 2018 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions, _
 
 
 class EventRegistration(models.Model):
@@ -30,3 +30,10 @@ class EventRegistration(models.Model):
                     for fname in ('firstname', 'lastname')
                     if item[fname] and item[fname].strip()]
             item.name = ' '.join(name)
+
+    @api.constrains('lastname', 'firstname')
+    def _check_names(self):
+        if not self.lastname or not self.firstname:
+            raise exceptions.UserError(
+                _('You must provide `lastname` and `firstname`.')
+            )
