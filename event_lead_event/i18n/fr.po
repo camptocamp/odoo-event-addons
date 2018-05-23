@@ -1,0 +1,114 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* event_lead_event
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-16 12:45+0000\n"
+"PO-Revision-Date: 2018-05-16 14:47+0200\n"
+"Last-Translator: Didier Donzé <didier.donze@camptocamp.com>\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+#. module: event_lead_event
+#: model:ir.ui.view,arch_db:event_lead_event.event_lead_event_view
+msgid "Cancel"
+msgstr "Abandonner"
+
+#. module: event_lead_event
+#: model:ir.ui.view,arch_db:event_lead_event.event_lead_event_view
+msgid "Change Lead Event"
+msgstr "Changer l'événement promu"
+
+#. module: event_lead_event
+#: model:ir.actions.act_window,name:event_lead_event.action_event_lead_event
+#: model:ir.ui.view,arch_db:event_lead_event.event_lead_event_view
+msgid "Change lead event"
+msgstr "Changer l'événement promu"
+
+#. module: event_lead_event
+#: model:ir.ui.view,arch_db:event_lead_event.event_lead_event_view
+msgid "Change the lead event status to the new Event."
+msgstr "Changer le statut de l'événement promu."
+
+#. module: event_lead_event
+#: model:ir.model.fields,field_description:event_lead_event.field_event_event_leadconfirm_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: event_lead_event
+#: model:ir.model.fields,field_description:event_lead_event.field_event_event_leadconfirm_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: event_lead_event
+#: model:ir.model.fields,field_description:event_lead_event.field_event_event_leadconfirm_old_lead_id
+msgid "Current Lead Event"
+msgstr "Événement promu actuel"
+
+#. module: event_lead_event
+#: model:ir.model.fields,field_description:event_lead_event.field_event_event_leadconfirm_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: event_lead_event
+#: model:ir.model,name:event_lead_event.model_event_event
+msgid "Event"
+msgstr "Événement"
+
+#. module: event_lead_event
+#: model:ir.model.fields,field_description:event_lead_event.field_event_event_leadconfirm_id
+msgid "ID"
+msgstr "ID"
+
+#. module: event_lead_event
+#: model:ir.model.fields,field_description:event_lead_event.field_event_event_leadconfirm___last_update
+msgid "Last Modified on"
+msgstr "Modifié le"
+
+#. module: event_lead_event
+#: model:ir.model.fields,field_description:event_lead_event.field_event_event_leadconfirm_write_uid
+msgid "Last Updated by"
+msgstr "Modifié par"
+
+#. module: event_lead_event
+#: model:ir.model.fields,field_description:event_lead_event.field_event_event_leadconfirm_write_date
+msgid "Last Updated on"
+msgstr "Modifié le"
+
+#. module: event_lead_event
+#: model:ir.model.fields,field_description:event_lead_event.field_event_event_lead_event
+msgid "Lead Event"
+msgstr "Événement promu"
+
+#. module: event_lead_event
+#: model:ir.model.fields,field_description:event_lead_event.field_event_event_leadconfirm_event_id
+msgid "New Lead Event"
+msgstr "Nouvel Événement promu"
+
+#. module: event_lead_event
+#: model:ir.ui.view,arch_db:event_lead_event.event_lead_event_view
+msgid "Remove the lead event status from the current event."
+msgstr "Enlever le statut d'événement promu de l'événement courant."
+
+#. module: event_lead_event
+#: model:ir.model.fields,field_description:event_lead_event.field_event_event_leadconfirm_same_event
+msgid "Same Event"
+msgstr "Même événement"
+
+#. module: event_lead_event
+#: code:addons/event_lead_event/models/event.py:24
+#, python-format
+msgid "There can be only one lead event."
+msgstr "Un seul événement peut être promu à la fois."
+
+#. module: event_lead_event
+#: model:ir.model,name:event_lead_event.model_event_event_leadconfirm
+msgid "event.event.leadconfirm"
+msgstr ""

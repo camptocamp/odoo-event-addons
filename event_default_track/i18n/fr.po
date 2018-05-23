@@ -1,0 +1,22 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* event_default_track
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-16 12:43+0000\n"
+"PO-Revision-Date: 2018-05-16 14:45+0200\n"
+"Last-Translator: Didier Donzé <didier.donze@camptocamp.com>\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+#. module: event_default_track
+#: model:ir.model,name:event_default_track.model_event_event
+msgid "Event"
+msgstr "Événement"
