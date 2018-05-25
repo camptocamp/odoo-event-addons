@@ -4,6 +4,14 @@ from odoo import _
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
+# These are translated in js but they aren't recognized.
+SMART_BUTTON_TERMS = {
+    "string_true": _("Lead Event"),
+    "hover_true": _("Clear Lead Event"),
+    "string_false": _("Lead Event"),
+    "hover_false": _("Make Lead Event")
+}
+
 
 class Event(models.Model):
 

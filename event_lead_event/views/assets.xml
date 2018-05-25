@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+        <template id="assets_common" name="leadevent assets" inherit_id="web.assets_common">
+
+            <!-- JS -->
+            <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript" src="/event_lead_event/static/src/js/fix_translations.js"></script>
+            </xpath>
+        </template>
+
+</odoo>
