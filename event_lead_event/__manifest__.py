@@ -15,7 +15,6 @@
     'data': [
         'wizard/lead_event.xml',
         'views/event_views.xml',
-        'views/assets.xml',
     ],
     'installable': True,
 }

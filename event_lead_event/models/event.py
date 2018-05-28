@@ -4,7 +4,8 @@ from odoo import _
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
-# These are translated in js but they aren't recognized.
+# These are translated in js on the fly but they are not exported
+# as they are not marked w/ `_t`. Here we make sure they land on PO files.
 SMART_BUTTON_TERMS = {
     "string_true": _("Lead Event"),
     "hover_true": _("Clear Lead Event"),
