@@ -3,7 +3,7 @@
 
 {
     'name': 'Event first name and last name',
-    'version': '11.0.1.1.1',
+    'version': '11.0.1.1.2',
     'category': 'Sales',
     'license': 'AGPL-3',
     'author': 'Camptocamp, Odoo Community Association (OCA)',

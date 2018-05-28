@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* event_lead_image
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-16 12:47+0000\n"
+"PO-Revision-Date: 2018-05-16 14:48+0200\n"
+"Last-Translator: Didier Donzé <didier.donze@camptocamp.com>\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+#. module: event_lead_image
+#: model:ir.model.fields,field_description:event_lead_image.field_event_event_lead_image_big
+msgid "Big Lead Image"
+msgstr "Image de promotion grande taille"
+
+#. module: event_lead_image
+#: model:ir.model,name:event_lead_image.model_event_event
+msgid "Event"
+msgstr "Événement"
+
+#. module: event_lead_image
+#: model:ir.model.fields,field_description:event_lead_image.field_event_event_has_lead_image
+msgid "Has Lead Image?"
+msgstr "A une image de promotion?"
+
+#. module: event_lead_image
+#: model:ir.model.fields,field_description:event_lead_image.field_event_event_lead_image
+msgid "Lead Image"
+msgstr "Image de promotion"
+
+#. module: event_lead_image
+#: model:ir.model.fields,field_description:event_lead_image.field_event_event_lead_image_medium
+msgid "Medium Lead Image"
+msgstr "Image de promotion taille moyenne"
+
+#. module: event_lead_image
+#: model:ir.model.fields,field_description:event_lead_image.field_event_event_lead_image_small
+msgid "Small Lead Image"
+msgstr "Image de promotion petite taille"
+
+#. module: event_lead_image
+#: model:ir.model.fields,field_description:event_lead_image.field_event_event_lead_image_thumb
+msgid "Thumb Lead Image"
+msgstr "Image de promotion vignette"

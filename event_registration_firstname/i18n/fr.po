@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* event_registration_firstname
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-16 12:48+0000\n"
+"PO-Revision-Date: 2018-05-16 14:49+0200\n"
+"Last-Translator: Didier Donzé <didier.donze@camptocamp.com>\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+#. module: event_registration_firstname
+#: model:ir.model,name:event_registration_firstname.model_event_registration
+msgid "Attendee"
+msgstr "Participant"
+
+#. module: event_registration_firstname
+#: model:ir.model.fields,field_description:event_registration_firstname.field_event_registration_firstname
+#: model:ir.ui.view,arch_db:event_registration_firstname.view_registration_search_inherit_firstname
+msgid "Firstname"
+msgstr "Prénom"
+
+#. module: event_registration_firstname
+#: model:ir.model.fields,field_description:event_registration_firstname.field_event_registration_lastname
+#: model:ir.ui.view,arch_db:event_registration_firstname.view_registration_search_inherit_firstname
+msgid "Lastname"
+msgstr "Nom"
+
+#. module: event_registration_firstname
+#: code:addons/event_registration_firstname/models/event_registration.py:38
+#, python-format
+msgid "You must provide `lastname` and `firstname`."
+msgstr "Veuillez saisir le `nom` et `prénom`."
