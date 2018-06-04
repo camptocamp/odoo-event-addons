@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template name="Waiting list registration" id="event_waiting_list_registration">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure"/>
+                <div class="container">
+                    <h1>Event Waiting list</h1>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <!--TODO Do we want some extra text here ? (event specific maybe ?) -->
+                            <!--<div class="oe_structure">-->
+                                <!--<div>-->
+                                    <!--<p>Contact us about anything related to our company or services.</p>-->
+                                    <!--<p>We'll do our best to get back to you as soon as possible.</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <form action="/website_form/"
+                                  method="post"
+                                  data-model_name="crm.lead"
+                                  data-success_page="/registered-waiting-list"
+                                  class="s_website_form form-horizontal container-fluid mt32"
+                                  enctype="multipart/form-data"
+                                  data-editable-form="false">
+                                <input type="hidden" name="type" t-att-value="values.get('type')" />
+                                <input type="hidden" name="event_id" t-att-value="values.get('event_id')"/>
+                                <div class="form-group form-field o_website_form_required_custom">
+                                    <label class="col-md-3 col-sm-4 control-label" for="lastname">Lastname</label>
+                                    <div class="col-md-7 col-sm-8">
+                                        <input type="text" class="form-control o_website_form_input" name="lastname" t-att-value="request.params.get('lastname', '')" required=""/>
+                                    </div>
+                                </div>
+                                <div class="form-group form-field o_website_form_required_custom">
+                                    <label class="col-md-3 col-sm-4 control-label" for="firstname">Firstname</label>
+                                    <div class="col-md-7 col-sm-8">
+                                        <input type="text" class="form-control o_website_form_input" name="firstname" t-att-value="request.params.get('firstname', '')" required=""/>
+                                    </div>
+                                </div>
+                                <div class="form-group form-field o_website_form_required_custom">
+                                    <label class="col-md-3 col-sm-4 control-label" for="email_from">Email</label>
+                                    <div class="col-md-7 col-sm-8">
+                                        <input type="text" class="form-control o_website_form_input" name="email_from" required="" t-att-value="request.params.get('email_from', '')" />
+                                    </div>
+                                </div>
+                                <div class="form-group form-field">
+                                    <label class="col-md-3 col-sm-4 control-label" for="phone">Phone Number</label>
+                                    <div class="col-md-7 col-sm-8">
+                                        <input type="text" class="form-control o_website_form_input" name="phone" t-att-value="request.params.get('phone', '')" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-3 col-sm-offset-4 col-sm-8 col-md-7">
+                                        <span class="btn btn-primary btn-lg o_website_form_send">Register</span>
+                                        <span id="o_website_form_result"></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-4 mb32">
+                            <t t-call="website.company_description"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+    <record id="registered_on_waiting_list" model="website.page">
+        <field name="name">Registered (Waiting list)</field>
+        <field name="type">qweb</field>
+        <field name="url">/registered-waiting-list</field>
+        <field name="website_published">True</field>
+        <field name="key">event_waiting_list.registered_on_waiting_list</field>
+        <field name="arch" type="xml">
+            <t name="Registered (Waiting list)" t-name="event_waiting_list.registered_on_waiting_list">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="oe_structure"/>
+                        <div class="container">
+                            <h1>Thanks!</h1>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="alert alert-success">
+                                        You've been successfully registered on the waiting list for this event.
+                                        <button type="button" class="close" data-dismiss="alert">&amp;times;</button>
+                                    </div>
+                                    <p>
+                                        We will get back to you shortly.
+                                    </p><p class="mt64">
+                                        If you have an emergency, do not hesitate to contact us by phone:
+                                    </p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-phone"></i> : <span t-field="res_company.phone"/></li>
+                                        <li><i class="fa fa-envelope"></i> : <span t-field="res_company.email"/></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <t t-call="website.company_description"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="oe_structure"/>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>
