@@ -18,6 +18,9 @@
         <field name="arch" type="xml">
             <search string="Search waiting list">
                 <field name="event_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Event" name="groupby_event" domain="[]" context="{'group_by':'event_id'}"/>
+                </group>
             </search>
         </field>
     </record>

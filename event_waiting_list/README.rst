@@ -12,12 +12,16 @@ attendees through a waiting list.
 Usage
 =====
 
+TODO Fixme : it's only backend here
+
 To use this module, you need to add a link to the waiting list registration
 controller on your event.
 URL for waiting list registration is defined by ```/event/<model("event.event"):event>/waiting_list_registration```.
 
 Known issues / Roadmap
 ======================
+
+TODO Fixme
 
 * There is no registration order on the waiting list yet. Add a sequence or use a date ?
 * Actions from CRM Leads/Opportunities are available in waiting list tree view

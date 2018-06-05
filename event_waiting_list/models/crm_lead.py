@@ -16,15 +16,3 @@ class CrmLead(models.Model):
         selection_add=[('event_waiting_list', 'Event Waiting list')],
     )
 
-    def website_form_input_filter(self, request, values):
-        """Define lead's name as 'firstname lastname' for waiting list."""
-        res = super().website_form_input_filter(request, values)
-        if (
-                not res.get('name') and
-                request.params.get('type') == 'event_waiting_list'
-        ):
-            complete_name = '{} {}'.format(
-                request.params.get('firstname'),
-                request.params.get('lastname'))
-            res['name'] = complete_name
-        return res

@@ -10,16 +10,9 @@
     'depends': [
         'crm',
         'event',
-        'website_form',
-        # website_crm is added here to ensure overrides are called
-        # correctly. We don't really want it, but it's autoinstall=True,
-        # and website_partner is a dependency of website_event.
-        'website_crm',
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
-        'data/website_form.xml',
-        'templates/waiting_list_registration.xml',
         'views/crm_lead.xml',
         'views/event.xml',
     ],
