@@ -12,7 +12,6 @@ class Event(models.Model):
         'crm.lead',
         domain=[('type', '=', 'event_waiting_list')],
         inverse_name='event_id',
-        readonly=True
     )
     waiting_list_count = fields.Integer(compute='_compute_waiting_list_count')
 
