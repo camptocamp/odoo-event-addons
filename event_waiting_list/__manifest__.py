@@ -13,6 +13,8 @@
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
+        'security/ir.model.access.csv',
+        'security/rules.xml',
         'views/crm_lead.xml',
         'views/event.xml',
     ],
