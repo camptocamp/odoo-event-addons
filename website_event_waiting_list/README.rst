@@ -6,26 +6,15 @@
 Event Waiting List
 ==================
 
-This module extends the functionality of events to support registration of
-attendees through a waiting list, using the CRM module and leads model.
+This module extends the functionality of event_waiting_list to support
+registration through the website, using website_form.
 
 Usage
 =====
 
-When maximum attendees to an event is limited, this module allows to flag the
-event as using a Waiting list.
-A smart button will then appear on the event to display linked crm.leads of
-'event_waiting_list' type.
-
-Known issues / Roadmap
-======================
-
-* Although some things we considered (rules, separated menus and actions),
-  extensive testing is required if CRM is to be used next to this module.
-* Actions from CRM Leads/Opportunities are available in waiting list tree view
-* Advanced filters and groupby from CRM Leads/Opportunities are available in waiting list search view
-* Linked crm.leads are left hanging when waiting_list is deactivated on the event.
-* There's actually nothing to transform waiting list leads into attendees.
+To use this module, you need to add a link to the waiting list registration
+controller on your event.
+URL for waiting list registration is defined by ```/event/<model("event.event"):event>/waiting-list-registration```.
 
 Bug Tracker
 ===========
