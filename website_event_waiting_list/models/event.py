@@ -14,7 +14,7 @@ class Event(models.Model):
 
     @api.depends('waiting_list')
     def _compute_waiting_list_registration_url(self):
-        for item in self:
-            if item.waiting_list:
-                item.waiting_list_registration_url = \
-                    item.website_url + '/waiting_list_registration'
+        for event in self:
+            if event.waiting_list:
+                event.waiting_list_registration_url = \
+                    event.website_url + '/waiting-list-registration'
