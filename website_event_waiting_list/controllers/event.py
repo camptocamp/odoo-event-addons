@@ -7,7 +7,7 @@ from odoo import http
 class EventWaitingListRegister(http.Controller):
 
     @http.route([
-        '/event/<model("event.event"):event>/waiting_list_registration',
+        '/event/<model("event.event"):event>/waiting-list-registration',
     ], type='http', auth='public', website=True)
     def event_register_waiting_list(self, event, **kwargs):
         waiting_list_reg_template = 'website_event_waiting_list.' \
@@ -21,7 +21,7 @@ class EventWaitingListRegister(http.Controller):
         return http.request.render(waiting_list_reg_template, kwargs)
 
     @http.route([
-        '/event/<model("event.event"):event>/waiting_list_confirmation',
+        '/event/<model("event.event"):event>/waiting-list-confirmation',
     ], type='http', auth='public', website=True)
     def event_waiting_list_confirmation(self, event, **kwargs):
         waiting_list_confirmation_template = 'website_event_waiting_list.' \
