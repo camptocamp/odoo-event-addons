@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template name="Event waiting list registration" id="event_waiting_list_registration">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure"/>
+                <div class="container">
+                    <h1><span t-field="event.name" /> Waiting list</h1>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="oe_structure">
+                                <div>
+                                    <p>Register to this event's waiting list.</p>
+                                    <p>We'll do our best to get back to you as soon as possible.</p>
+                                </div>
+                            </div>
+                            <form action="/website_form/"
+                                  method="post"
+                                  data-model_name="crm.lead"
+                                  t-att-data-success_page="'%s/waiting-list-confirmation' % event.website_url"
+                                  class="s_website_form form-horizontal container-fluid mt32"
+                                  enctype="multipart/form-data"
+                                  data-editable-form="false">
+                                <input type="hidden" name="type" t-att-value="type" />
+                                <input type="hidden" name="event_id" t-att-value="event_id"/>
+                                <div class="form-group form-field o_website_form_required_custom">
+                                    <label class="col-md-3 col-sm-4 control-label" for="lastname">Lastname</label>
+                                    <div class="col-md-7 col-sm-8">
+                                        <input type="text" class="form-control o_website_form_input" name="lastname" t-att-value="request.params.get('lastname', '')" required=""/>
+                                    </div>
+                                </div>
+                                <div class="form-group form-field o_website_form_required_custom">
+                                    <label class="col-md-3 col-sm-4 control-label" for="firstname">Firstname</label>
+                                    <div class="col-md-7 col-sm-8">
+                                        <input type="text" class="form-control o_website_form_input" name="firstname" t-att-value="request.params.get('firstname', '')" required=""/>
+                                    </div>
+                                </div>
+                                <div class="form-group form-field o_website_form_required_custom">
+                                    <label class="col-md-3 col-sm-4 control-label" for="email_from">Email</label>
+                                    <div class="col-md-7 col-sm-8">
+                                        <input type="text" class="form-control o_website_form_input" name="email_from" required="" t-att-value="request.params.get('email_from', '')" />
+                                    </div>
+                                </div>
+                                <div class="form-group form-field">
+                                    <label class="col-md-3 col-sm-4 control-label" for="phone">Phone Number</label>
+                                    <div class="col-md-7 col-sm-8">
+                                        <input type="text" class="form-control o_website_form_input" name="phone" t-att-value="request.params.get('phone', '')" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-3 col-sm-offset-4 col-sm-8 col-md-7">
+                                        <span class="btn btn-primary btn-lg o_website_form_send">Register</span>
+                                        <span id="o_website_form_result"></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-4 mb32">
+                            <t t-call="website.company_description"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+    <template name="Event Waiting list Confirmation" id="event_waiting_list_confirmation">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure"/>
+                <div class="container">
+                    <h1>Thanks!</h1>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="alert alert-success">
+                                You've been successfully registered on the waiting list for this event.
+                                <button type="button" class="close" data-dismiss="alert">&amp;times;</button>
+                            </div>
+                            <p>
+                                We will get back to you shortly.
+                            </p><p class="mt64">
+                                If you have an emergency, do not hesitate to contact the organizer.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <!--Copied from website.company_description-->
+                            <address itemscope="itemscope" itemtype="http://schema.org/Organization">
+                                <div t-field="event.organizer_id" t-options='{
+                                        "widget": "contact",
+                                        "fields": ["name", "address", "phone", "mobile", "email"]}'/>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+</odoo>
