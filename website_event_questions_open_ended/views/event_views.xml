@@ -34,6 +34,7 @@
             <field name="answer_ids" position="after">
                 <field name="open_ended_answer_ids">
                     <tree>
+                        <field name="question_sequence" invisible="1"/>
                         <field name="question_id" />
                         <field name="answer" />
                     </tree>
