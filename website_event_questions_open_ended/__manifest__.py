@@ -15,4 +15,7 @@
         'security/ir.model.access.csv',
         'views/event_views.xml',
     ],
+    'demo': [
+        'demo/event_demo.xml',
+    ],
 }
