@@ -25,4 +25,20 @@
             </field>
         </field>
     </record>
+
+    <record model="ir.ui.view" id="view_event_registration_form_inherit_question_inherit">
+        <field name="name">event.registration.form.inherit.question.inherit</field>
+        <field name="model">event.registration</field>
+        <field name="inherit_id" ref="website_event_questions.view_event_registration_form_inherit_question" />
+        <field name="arch" type="xml">
+            <field name="answer_ids" position="after">
+                <field name="open_ended_answer_ids">
+                    <tree>
+                        <field name="question_id" />
+                        <field name="answer" />
+                    </tree>
+                </field>
+            </field>
+        </field>
+    </record>
 </odoo>

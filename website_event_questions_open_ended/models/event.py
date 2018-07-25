@@ -7,8 +7,8 @@ class EventRegistration(models.Model):
 
     _inherit = 'event.registration'
 
-    open_ended_answer_ids = fields.Many2many(
-        'event.answer.open', string='Answers'
+    open_ended_answer_ids = fields.One2many(
+        'event.answer.open', inverse_name='registration_id', string='Answers'
     )
 
 
@@ -40,9 +40,12 @@ class EventQuestion(models.Model):
 class EventAnswerOpen(models.Model):
 
     _name = 'event.answer.open'
+    _description = 'Answers to open ended questions'
 
-    sequence = fields.Integer(default=10)
     question_id = fields.Many2one(
         'event.question', required=True, ondelete='cascade'
+    )
+    registration_id = fields.Many2one(
+        'event.registration', required=True, ondelete='cascade'
     )
     answer = fields.Text()
