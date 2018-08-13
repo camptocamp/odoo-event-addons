@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-18 09:20+0000\n"
-"PO-Revision-Date: 2018-06-18 09:20+0000\n"
+"POT-Creation-Date: 2018-07-27 12:14+0000\n"
+"PO-Revision-Date: 2018-07-27 12:14+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,18 +24,18 @@ msgstr "&amp;times;"
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
 msgid "<span class=\"btn btn-primary btn-lg o_website_form_send\">Register</span>\n"
 "                                        <span id=\"o_website_form_result\"/>"
-msgstr "<span class=\"btn btn-primary btn-lg o_website_form_send\">Register</span>\n"
+msgstr "<span class=\"btn btn-primary btn-lg o_website_form_send\">S'inscrire</span>\n"
 "                                        <span id=\"o_website_form_result\"/>"
 
 #. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
 msgid "Email"
-msgstr "Email"
+msgstr "Courriel"
 
 #. module: website_event_waiting_list
 #: model:ir.model,name:website_event_waiting_list.model_event_event
 msgid "Event"
-msgstr "Evénement"
+msgstr "Évènement"
 
 #. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
@@ -55,7 +55,7 @@ msgstr "Nom"
 #. module: website_event_waiting_list
 #: model:ir.model,name:website_event_waiting_list.model_crm_lead
 msgid "Lead/Opportunity"
-msgstr "Lead/Opportunité"
+msgstr "Piste/opportunité"
 
 #. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
