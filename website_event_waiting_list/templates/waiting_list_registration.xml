@@ -2,6 +2,10 @@
 <odoo>
     <template name="Event waiting list registration" id="event_waiting_list_registration">
         <t t-call="website.layout">
+            <t t-set="head">
+                <t t-raw="head" />
+                <meta name="robots" content="noindex" />
+            </t>
             <div id="wrap" class="event-waiting-list-subscribe">
                 <div class="oe_structure"/>
                 <div class="container">
@@ -72,6 +76,10 @@
 
     <template name="Event Waiting list Confirmation" id="event_waiting_list_confirmation">
         <t t-call="website.layout">
+            <t t-set="head">
+                <t t-raw="head" />
+                <meta name="robots" content="noindex" />
+            </t>
             <div id="wrap" class="event-waiting-list-success">
                 <div class="oe_structure"/>
                 <t t-set="sudo_event" t-value="event.sudo()" />
