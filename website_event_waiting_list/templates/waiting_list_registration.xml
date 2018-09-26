@@ -21,7 +21,7 @@
                                   class="s_website_form form-horizontal"
                                   enctype="multipart/form-data"
                                   data-editable-form="false">
-                                <input type="hidden" name="type" t-att-value="type" />
+                                <input type="hidden" name="type" t-att-value="lead_type" />
                                 <input type="hidden" name="event_id" t-att-value="event_id"/>
                                 <div class="form-group form-field o_website_form_required_custom row">
                                     <label class="col-md-3 col-sm-4 control-label" for="lastname">Lastname</label>
