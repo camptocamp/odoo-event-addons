@@ -2,54 +2,58 @@
 <odoo>
     <template name="Event waiting list registration" id="event_waiting_list_registration">
         <t t-call="website.layout">
-            <div id="wrap">
+            <div id="wrap" class="event-waiting-list-subscribe">
                 <div class="oe_structure"/>
                 <div class="container">
-                    <h1><span t-field="event.name" /> Waiting list</h1>
-                    <div class="row">
+                    <div class="page-title row text-center mt32 mb64">
+                        <div class="col-md-12">
+                            <h1>Event waiting list subscription</h1>
+                            <h2><a title="Go to event page" t-att-href="event.website_url"
+                                   class="event-name" t-field="event.name" /></h2>
+                        </div>
+                    </div>
+                    <div class="page-content row">
                         <div class="col-md-8">
-                            <div class="oe_structure">
-                                <div>
-                                    <p>Register to this event's waiting list.</p>
-                                    <p>We'll do our best to get back to you as soon as possible.</p>
-                                </div>
-                            </div>
                             <form action="/website_form/"
                                   method="post"
                                   data-model_name="crm.lead"
-                                  t-att-data-success_page="'%s/waiting-list-confirmation' % event.website_url"
-                                  class="s_website_form form-horizontal container-fluid mt32"
+                                  t-attf-data-success_page="#{event.website_url}/waiting-list-confirmation"
+                                  class="s_website_form form-horizontal"
                                   enctype="multipart/form-data"
                                   data-editable-form="false">
                                 <input type="hidden" name="type" t-att-value="type" />
                                 <input type="hidden" name="event_id" t-att-value="event_id"/>
-                                <div class="form-group form-field o_website_form_required_custom">
+                                <div class="form-group form-field o_website_form_required_custom row">
                                     <label class="col-md-3 col-sm-4 control-label" for="lastname">Lastname</label>
                                     <div class="col-md-7 col-sm-8">
-                                        <input type="text" class="form-control o_website_form_input" name="lastname" t-att-value="request.params.get('lastname', '')" required=""/>
+                                        <input type="text" class="form-control o_website_form_input" name="lastname"
+                                               t-att-value="request.params.get('lastname', '')" required="1"/>
                                     </div>
                                 </div>
-                                <div class="form-group form-field o_website_form_required_custom">
+                                <div class="form-group form-field o_website_form_required_custom row">
                                     <label class="col-md-3 col-sm-4 control-label" for="firstname">Firstname</label>
                                     <div class="col-md-7 col-sm-8">
-                                        <input type="text" class="form-control o_website_form_input" name="firstname" t-att-value="request.params.get('firstname', '')" required=""/>
+                                        <input type="text" class="form-control o_website_form_input" name="firstname"
+                                               t-att-value="request.params.get('firstname', '')" required="1"/>
                                     </div>
                                 </div>
-                                <div class="form-group form-field o_website_form_required_custom">
+                                <div class="form-group form-field o_website_form_required_custom row">
                                     <label class="col-md-3 col-sm-4 control-label" for="email_from">Email</label>
                                     <div class="col-md-7 col-sm-8">
-                                        <input type="text" class="form-control o_website_form_input" name="email_from" required="" t-att-value="request.params.get('email_from', '')" />
+                                        <input type="text" class="form-control o_website_form_input" name="email_from"
+                                               t-att-value="request.params.get('email_from', '')" required="1"/>
                                     </div>
                                 </div>
-                                <div class="form-group form-field">
+                                <div class="form-group form-field row">
                                     <label class="col-md-3 col-sm-4 control-label" for="phone">Phone Number</label>
                                     <div class="col-md-7 col-sm-8">
-                                        <input type="text" class="form-control o_website_form_input" name="phone" t-att-value="request.params.get('phone', '')" />
+                                        <input type="text" class="form-control o_website_form_input" name="phone"
+                                               t-att-value="request.params.get('phone', '')" />
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-md-offset-3 col-sm-offset-4 col-sm-8 col-md-7">
-                                        <span class="btn btn-primary btn-lg o_website_form_send">Register</span>
+                                <div class="form-group mt32">
+                                    <div class="col-md-offset-3 col-md-7 col-sm-offset-4 col-sm-8 text-right">
+                                        <button class="btn btn-primary o_website_form_send">Register</button>
                                         <span id="o_website_form_result"></span>
                                     </div>
                                 </div>
@@ -64,9 +68,11 @@
             </div>
         </t>
     </template>
+
+
     <template name="Event Waiting list Confirmation" id="event_waiting_list_confirmation">
         <t t-call="website.layout">
-            <div id="wrap">
+            <div id="wrap" class="event-waiting-list-success">
                 <div class="oe_structure"/>
                 <div class="container">
                     <h1>Thanks!</h1>
@@ -78,7 +84,8 @@
                             </div>
                             <p>
                                 We will get back to you shortly.
-                            </p><p class="mt64">
+                            </p>
+                            <p class="mt64">
                                 If you have an emergency, do not hesitate to contact the organizer.
                             </p>
                         </div>
