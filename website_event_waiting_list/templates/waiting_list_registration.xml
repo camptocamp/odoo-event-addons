@@ -74,20 +74,32 @@
         <t t-call="website.layout">
             <div id="wrap" class="event-waiting-list-success">
                 <div class="oe_structure"/>
+                <t t-set="sudo_event" t-value="event.sudo()" />
                 <div class="container">
                     <h1>Thanks!</h1>
+                    <h2>You've been successfully registered on the waiting list for this event.</h2>
                     <div class="row">
                         <div class="col-md-8">
-                            <div class="alert alert-success">
-                                You've been successfully registered on the waiting list for this event.
-                                <button type="button" class="close" data-dismiss="alert">&amp;times;</button>
+                            <div class="alert alert-info">
+                                <p class="note">
+                                    We will get back to you shortly.
+                                </p>
+                                <p class="note help">
+                                    If you have an emergency, do not hesitate to contact the organizer.
+                                </p>
+                                <p class="organizer" t-if="sudo_event.organizer_id and sudo_event.organizer_id.email">
+                                    <!-- TODO: obfuscate email to avoid spam -->
+                                    <a class="link-organizer"
+                                        t-attf-href="mailto:#{sudo_event.organizer_id.email}">
+                                        <i class="fa fa-envelope" aria-hidden="true" t-translate="off" />
+                                        <span t-field="sudo_event.organizer_id">John doe</span>
+                                    </a>
+                                </p>
                             </div>
-                            <p>
-                                We will get back to you shortly.
-                            </p>
-                            <p class="mt64">
-                                If you have an emergency, do not hesitate to contact the organizer.
-                            </p>
+                            <a class="btn btn-link link-back" title="Go to event page"
+                               t-att-href="event.website_url">
+                               <i class="fa fa-arrow-left" aria-hidden="true" t-translate="off" /> Get back to event details
+                            </a>
                         </div>
                         <div class="col-md-4">
                             <!--Copied from website.company_description-->
