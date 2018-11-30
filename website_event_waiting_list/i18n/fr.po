@@ -1,31 +1,20 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* website_event_waiting_list
+# 	* website_event_waiting_list
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-27 12:14+0000\n"
+"POT-Creation-Date: 2018-11-23 15:09+0000\n"
 "PO-Revision-Date: 2018-07-27 12:14+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-
-#. module: website_event_waiting_list
-#: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_confirmation
-msgid "&amp;times;"
-msgstr "&amp;times;"
-
-#. module: website_event_waiting_list
-#: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
-msgid "<span class=\"btn btn-primary btn-lg o_website_form_send\">Register</span>\n"
-"                                        <span id=\"o_website_form_result\"/>"
-msgstr "<span class=\"btn btn-primary btn-lg o_website_form_send\">S'inscrire</span>\n"
-"                                        <span id=\"o_website_form_result\"/>"
 
 #. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
@@ -39,13 +28,34 @@ msgstr "Évènement"
 
 #. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
+msgid "Event waiting list subscription"
+msgstr "Inscription en liste d’attente"
+
+#. module: website_event_waiting_list
+#: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
 msgid "Firstname"
 msgstr "Prénom"
 
 #. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_confirmation
+msgid "Get back to event details"
+msgstr "Revenir aux détails de l'événement"
+
+#. module: website_event_waiting_list
+#: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_confirmation
+#: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
+msgid "Go to event page"
+msgstr "Aller à la page de l'événement"
+
+#. module: website_event_waiting_list
+#: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_confirmation
 msgid "If you have an emergency, do not hesitate to contact the organizer."
 msgstr "En cas d'urgence, n'hésitez pas à contacter l'organisateur."
+
+#. module: website_event_waiting_list
+#: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_confirmation
+msgid "John doe"
+msgstr "John doe"
 
 #. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
@@ -64,8 +74,8 @@ msgstr "Numéro de téléphone"
 
 #. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
-msgid "Register to this event's waiting list."
-msgstr "S'inscrire en liste d'attente"
+msgid "Register"
+msgstr "S'inscrire"
 
 #. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_confirmation
@@ -78,22 +88,11 @@ msgid "Waiting List Registration Url"
 msgstr "Url de la liste d'attente"
 
 #. module: website_event_waiting_list
-#: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
-msgid "Waiting list"
-msgstr "Liste d'attente"
-
-#. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_confirmation
 msgid "We will get back to you shortly."
 msgstr "Nous revenons vers vous rapidement"
 
 #. module: website_event_waiting_list
-#: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
-msgid "We'll do our best to get back to you as soon as possible."
-msgstr "Nous faisons notre possible pour revenir vers vous rapidement."
-
-#. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_confirmation
 msgid "You've been successfully registered on the waiting list for this event."
 msgstr "Vous avez été ajouté avec succès sur liste d'attente."
-
