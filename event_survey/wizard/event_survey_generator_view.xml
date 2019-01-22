@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="event_survey_generate_view" model="ir.ui.view">
+    <field name="name">event.survey.generator form</field>
+    <field name="model">event.survey.generator</field>
+    <field name="arch" type="xml">
+      <form string="Create Survey">
+        <group>
+          <field name="survey_template_id"
+                 string="Template of survey"
+                 context="{'default_is_template': True}"
+          />
+          <field name="survey_title"/>
+        </group>
+        <footer>
+          <button string="Generate Survey" name="action_generate" type="object" default_focus="1" class="btn-primary"/>
+          <button string="Cancel" class="btn-default" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <record id="event_survey_generate_action" model="ir.actions.act_window">
+    <field name="name">Geneate survey</field>
+    <field name="res_model">event.survey.generator</field>
+    <field name="src_model">event.event</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+    <field name="view_type">form</field>
+  </record>
+
+</odoo>
