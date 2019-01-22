@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <record model="ir.ui.view" id="view_event_form">
+    <field name="name">event.event.survey</field>
+    <field name="model">event.event</field>
+    <field name="inherit_id" ref="event.view_event_form" />
+    <field name="arch" type="xml">
+      <xpath expr="//button[@name='toggle_active']" position="before">
+        <field name="survey_id"  invisible="True"/>
+          <button name="action_open_survey"
+            type="object"
+            class="oe_stat_button"
+            icon="fa-list-alt"
+            attrs="{'invisible': [('survey_id', '=', False)]}">
+            <span>
+              Survey
+            </span>
+          </button>
+          <button name="%(event_survey.event_survey_generate_action)d"
+            type="action"
+            class="oe_stat_button"
+            icon="fa-list-alt"
+            context="{'default_survey_title': name}"
+            attrs="{'invisible': [('survey_id', '!=', False)]}">
+            <span>
+              Create Survey
+            </span>
+        </button>
+      </xpath>
+    </field>
+</record>
+
+</odoo>
