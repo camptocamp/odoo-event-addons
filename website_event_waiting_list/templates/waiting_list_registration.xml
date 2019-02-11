@@ -76,6 +76,17 @@
                                         </select>
                                     </div>
                                 </div>
+                                <!-- compat w/ recaptcha enabled -->
+                                <t t-if="recaptcha_enabled">
+                                    <div class="form-group form-field field-captcha mt16 row">
+                                        <div class="col-md-12">
+                                            <div t-if="captcha_failed" class="alert alert-danger mb8">
+                                                <strong>Error:</strong> Captcha failed
+                                            </div>
+                                            <span class="o_website_form_recaptcha"/>
+                                        </div>
+                                    </div>
+                                </t>
                                 <div class="form-group form-controls mt32 row">
                                     <div class="col-md-12">
                                         <button class="btn btn-primary o_website_form_send pull-right">Register</button>

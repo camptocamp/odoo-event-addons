@@ -16,6 +16,8 @@ To use this module, you need to add a link to the waiting list registration
 controller on your event.
 URL for waiting list registration is defined by ```/event/<model("event.event"):event>/waiting-list-registration```.
 
+If `website_form_recaptcha` is installed, the recaptcha widget will be automatically included in the form.
+
 Bug Tracker
 ===========
 
