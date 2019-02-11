@@ -19,6 +19,7 @@
     'website': 'http://www.camptocamp.com',
     'data': [
         'data/website_form.xml',
+        'views/crm_lead_views.xml',
         'templates/waiting_list_registration.xml',
     ],
     'installable': True,

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-23 15:09+0000\n"
+"POT-Creation-Date: 2019-02-11 07:19+0000\n"
 "PO-Revision-Date: 2018-07-27 12:14+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
@@ -15,6 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+
+#. module: website_event_waiting_list
+#: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
+msgid "Company"
+msgstr "Raison sociale"
 
 #. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
@@ -66,6 +71,11 @@ msgstr "Nom"
 #: model:ir.model,name:website_event_waiting_list.model_crm_lead
 msgid "Lead/Opportunity"
 msgstr "Piste/opportunité"
+
+#. module: website_event_waiting_list
+#: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration
+msgid "Number of persons"
+msgstr "Nombre de personnes intéressées"
 
 #. module: website_event_waiting_list
 #: model:ir.ui.view,arch_db:website_event_waiting_list.event_waiting_list_registration

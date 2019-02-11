@@ -36,6 +36,7 @@ Contributors
 ------------
 
 * Akim Juillerat <akim.juillerat@camptocamp.com>
+* Simone Orsi <simone.orsi@camptocamp.com>
 
 Do not contact contributors directly about support or help with technical issues.
 

@@ -56,12 +56,6 @@ msgid "Manage waiting list"
 msgstr "Gérer la liste d'attente"
 
 #. module: event_waiting_list
-#: model:ir.ui.view,arch_db:event_waiting_list.view_waiting_list_lead_tree
-#: model:ir.ui.view,arch_db:event_waiting_list.view_waiting_list_lead_tree_from_event
-msgid "Name"
-msgstr "Nom"
-
-#. module: event_waiting_list
 #: model:ir.ui.view,arch_db:event_waiting_list.view_waiting_list_lead_search
 msgid "Search waiting list"
 msgstr "Rechercher liste d'attente"

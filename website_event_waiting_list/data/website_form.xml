@@ -5,7 +5,8 @@
         <value>crm.lead</value>
         <value eval="[
             'event_id',
-            'type'
+            'type',
+            'attendees_number',
         ]"/>
     </function>
 </odoo>
