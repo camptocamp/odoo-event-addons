@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_waiting_list_lead_tree" model="ir.ui.view">
+    <field name="name">crm.lead event waiting list tree</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="event_waiting_list.view_waiting_list_lead_tree"/>
+    <field name="arch" type="xml">
+      <field name="contact_name" position="before">
+        <field name="partner_name" />
+      </field>
+      <field name="phone" position="after">
+        <field name="attendees_number" />
+      </field>
+    </field>
+  </record>
+
+
+</odoo>

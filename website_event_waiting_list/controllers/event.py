@@ -18,8 +18,16 @@ class EventWaitingListRegister(http.Controller):
             'lead_type': 'event_waiting_list',
             'event': event,
             'event_id': event.id,
+            'recaptcha_enabled': self._recaptcha_enabled(),
         })
         return http.request.render(waiting_list_reg_template, kwargs)
+
+    def _recaptcha_enabled(self):
+        """Return True if recaptcha in installed and enabled on crm.lead."""
+        env = http.request.env
+        if 'website.form.recaptcha' in env:
+            return env.ref('crm.model_crm_lead').sudo().website_form_recaptcha
+        return False
 
     @http.route([
         '/event/<model("event.event"):event>/waiting-list-confirmation',

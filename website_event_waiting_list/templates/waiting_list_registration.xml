@@ -27,38 +27,70 @@
                                   data-editable-form="false">
                                 <input type="hidden" name="type" t-att-value="lead_type" />
                                 <input type="hidden" name="event_id" t-att-value="event_id"/>
-                                <div class="form-group form-field o_website_form_required_custom row">
+                                <div class="form-group form-field field-partner_name o_website_form_required_custom row">
+                                    <label class="col-md-3 col-sm-4 control-label" for="partner_name">Company</label>
+                                    <div class="col-md-7 col-sm-8">
+                                        <input type="text" class="form-control o_website_form_input" name="partner_name"
+                                               t-att-value="request.params.get('partner_name', '')" required="1"/>
+                                    </div>
+                                </div>
+                                <div class="form-group form-field field-lastname o_website_form_required_custom row">
                                     <label class="col-md-3 col-sm-4 control-label" for="lastname">Lastname</label>
                                     <div class="col-md-7 col-sm-8">
                                         <input type="text" class="form-control o_website_form_input" name="lastname"
                                                t-att-value="request.params.get('lastname', '')" required="1"/>
                                     </div>
                                 </div>
-                                <div class="form-group form-field o_website_form_required_custom row">
+                                <div class="form-group form-field field-firstname o_website_form_required_custom row">
                                     <label class="col-md-3 col-sm-4 control-label" for="firstname">Firstname</label>
                                     <div class="col-md-7 col-sm-8">
                                         <input type="text" class="form-control o_website_form_input" name="firstname"
                                                t-att-value="request.params.get('firstname', '')" required="1"/>
                                     </div>
                                 </div>
-                                <div class="form-group form-field o_website_form_required_custom row">
+                                <div class="form-group form-field field-email o_website_form_required_custom row">
                                     <label class="col-md-3 col-sm-4 control-label" for="email_from">Email</label>
                                     <div class="col-md-7 col-sm-8">
                                         <input type="text" class="form-control o_website_form_input" name="email_from"
                                                t-att-value="request.params.get('email_from', '')" required="1"/>
                                     </div>
                                 </div>
-                                <div class="form-group form-field row">
+                                <div class="form-group form-field field-phone row">
                                     <label class="col-md-3 col-sm-4 control-label" for="phone">Phone Number</label>
                                     <div class="col-md-7 col-sm-8">
                                         <input type="text" class="form-control o_website_form_input" name="phone"
                                                t-att-value="request.params.get('phone', '')" />
                                     </div>
                                 </div>
-                                <div class="form-group mt32">
-                                    <div class="col-md-offset-3 col-md-7 col-sm-offset-4 col-sm-8 text-right">
-                                        <button class="btn btn-primary o_website_form_send">Register</button>
-                                        <span id="o_website_form_result"></span>
+                                <div class="form-group form-field field-attendees_number row">
+                                    <t t-set="options" t-value="range(1, 11)" />
+                                    <label class="col-md-3 col-sm-4 control-label" for="attendees_number">Number of persons</label>
+                                    <div class="col-md-7 col-sm-8">
+                                        <select name="attendees_number" class="form-control o_website_form_input">
+                                            <t t-foreach="options" t-as="opt">
+                                                <option t-att-value="opt"
+                                                        t-att-selected="str(opt) == request.params.get('attendees_number') or None">
+                                                    <t t-esc="opt" />
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- compat w/ recaptcha enabled -->
+                                <t t-if="recaptcha_enabled">
+                                    <div class="form-group form-field field-captcha mt16 row">
+                                        <div class="col-md-12">
+                                            <div t-if="captcha_failed" class="alert alert-danger mb8">
+                                                <strong>Error:</strong> Captcha failed
+                                            </div>
+                                            <span class="o_website_form_recaptcha"/>
+                                        </div>
+                                    </div>
+                                </t>
+                                <div class="form-group form-controls mt32 row">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-primary o_website_form_send pull-right">Register</button>
+                                        <div id="o_website_form_result"></div>
                                     </div>
                                 </div>
                             </form>

@@ -5,7 +5,7 @@
         <field name="model">crm.lead</field>
         <field name="arch" type="xml">
             <tree string="Waiting list" editable="bottom">
-                <field name="name" string="Name"/>
+                <field name="contact_name" />
                 <field name="email_from" />
                 <field name="phone" />
                 <field name="event_id" />
@@ -15,13 +15,12 @@
     <record id="view_waiting_list_lead_tree_from_event" model="ir.ui.view">
         <field name="name">crm.lead.event.waiting.list.tree</field>
         <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="view_waiting_list_lead_tree" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
-            <tree string="Waiting list" editable="bottom">
-                <field name="name" string="Name"/>
-                <field name="email_from" />
-                <field name="phone" />
-                <field name="event_id" invisible="1"/>
-            </tree>
+            <field name="event_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
         </field>
     </record>
     <record id="view_waiting_list_lead_search" model="ir.ui.view">
