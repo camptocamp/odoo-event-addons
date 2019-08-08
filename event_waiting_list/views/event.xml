@@ -5,8 +5,10 @@
         <field name="model">event.event</field>
         <field name="inherit_id" ref="event.view_event_form" />
         <field name="arch" type="xml">
-            <xpath expr="//div[field[@name='seats_max']]" position="after">
-                <field name="waiting_list" attrs="{'invisible': [('seats_availability', '=', 'unlimited')]}" />
+            <xpath expr="//field[@name='seats_min']/parent::group" position="after">
+                <group name="waiting_list">
+                    <field name="waiting_list" attrs="{'invisible': [('seats_availability', '=', 'unlimited')]}" />
+                </group>
             </xpath>
             <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
                 <button name="%(action_waiting_list_from_event)d"
