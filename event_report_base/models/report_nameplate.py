@@ -26,5 +26,6 @@ class ReportNameplate(models.AbstractModel):
         data = dict(data or {})
         records = self.env["event.registration"].browse(docids)
         # group attendees: 2 per each page
+        # TODO: make this number configurable by company
         data.update({"pages": gen_chunks(records, chunksize=2)})
         return data

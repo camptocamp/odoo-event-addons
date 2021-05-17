@@ -15,15 +15,15 @@
   <template id="event_nameplate" name="Event nameplate">
     <t t-call="web.basic_layout">
       <t t-foreach="pages" t-as="page">
-        <div t-attf-class="page nameplates #{'debug' if debub else ''}">
+        <div t-attf-class="page nameplates #{'debug' if debug else ''}">
           <!-- put 2 nameplates on a single page -->
           <t t-foreach="page" t-as="o">
             <t t-set="o_company" t-value="o.partner_id" />
             <div t-attf-class="nameplate #{'even' if o_even else 'odd'}">
-              <div class="text-center flipped">
+              <div class="text-center flipped info">
                 <t t-call="event_report_base.nameplate_info" />
               </div>
-              <div class="text-center vertical-mirror">
+              <div class="text-center vertical-mirror info">
                 <t t-call="event_report_base.nameplate_info" />
               </div>
             </div>
