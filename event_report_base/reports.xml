@@ -8,24 +8,24 @@
         />
   </record>
 
-  <report
-        id="report_event_nameplate"
-        model="event.registration"
-        string="Nameplate"
-        report_type="qweb-pdf"
-        name="Event_report_base.event_nameplate"
-        file="event_report_base.event_nameplate"
-        paperformat="paperformat_A4_portrait_no_border"
-    />
+  <record id="report_event_nameplate" model="ir.actions.report">
+    <field name="name">Nameplate</field>
+    <field name="model">event.registration</field>
+    <field name="binding_model_id" ref="event.model_event_registration" />
+    <field name="paperformat_id" ref="paperformat_A4_portrait_no_border" />
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">event_report_base.event_nameplate</field>
+    <field name="report_file">event_report_base.event_nameplate</field>
+  </record>
 
-  <report
-        id="report_event_info"
-        model="event.event"
-        string="Event info"
-        report_type="qweb-pdf"
-        name="Event_report_base.event_info"
-        file="event_report_base.event_info"
-        paperformat="event.paperformat_euro_lowmargin"
-    />
+  <record id="report_event_info" model="ir.actions.report">
+    <field name="name">Event info</field>
+    <field name="model">event.event</field>
+    <field name="binding_model_id" ref="event.model_event_event" />
+    <field name="paperformat_id" ref="event.paperformat_euro_lowmargin" />
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">event_report_base.event_info</field>
+    <field name="report_file">event_report_base.event_info</field>
+  </record>
 
 </odoo>
