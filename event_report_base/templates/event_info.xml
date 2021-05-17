@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="event_info" name="Event info">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="event">
+                <!-- FIXME: in theory the language here should be the one of the site or logged-in user
+                but ATM does not change anything. -->
+                <t
+                    t-set="event"
+                    t-value="event.with_context(lang='fr_FR',tz=event.date_tz)"
+                />
+                <t t-set="labels" t-value="False" />
+                <div class="page event-info">
+                    <div class="main_info">
+                        <div class="base_data">
+                            <t t-call="event_report_base.company_logo">
+                                <t
+                                    t-set="img_style"
+                                    t-value="'width: 250px; height: auto;'"
+                                />
+                            </t>
+                            <h1><a t-att-href="event.website_url"><span
+                                        t-field="event.name"
+                                    /></a></h1>
+                            <t t-call="event_report_base.event_tracks_info">
+                                <t t-set="tracks" t-value="event.track_ids" />
+                            </t>
+                        </div>
+                        <div class="address">
+                            <h3>Address and Contact</h3>
+                            <div class="address_container">
+                                <div
+                                    class="address_field"
+                                    t-field="event.address_id"
+                                    t-options='{
+                                    "widget": "contact",
+                                    "fields": ["name", "address", "phone", "mobile", "email"]
+                                    }'
+                                />
+                                <div class="location">
+                                    <t t-call="event_report_base.organizer_map" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event_tracks">
+                            <t t-call="evert_report_base.event_tracks_by_day">
+                                <t
+                                    t-set="tracks_by_days"
+                                    t-value="event.get_tracks_by_days()"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

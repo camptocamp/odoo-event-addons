@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+  <record id="event.report_event_registration_badge" model="ir.actions.report">
+    <field
+            name="paperformat_id"
+            ref="event_report_base.paperformat_A4_portrait_no_border"
+        />
+  </record>
+
+  <report
+        id="report_event_nameplate"
+        model="event.registration"
+        string="Nameplate"
+        report_type="qweb-pdf"
+        name="Event_report_base.event_nameplate"
+        file="event_report_base.event_nameplate"
+        paperformat="paperformat_A4_portrait_no_border"
+    />
+
+  <report
+        id="report_event_info"
+        model="event.event"
+        string="Event info"
+        report_type="qweb-pdf"
+        name="Event_report_base.event_info"
+        file="event_report_base.event_info"
+        paperformat="event.paperformat_euro_lowmargin"
+    />
+
+</odoo>

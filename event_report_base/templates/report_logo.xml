@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <!--
+    Reusable snippet for rendering company logo.
+
+    Params:
+      `company`: defaults to context's `res_company` (available in reports, usually)
+      `logo_field`: field to get the logo from. Defaults to `logo`.
+  -->
+  <template id="company_logo" name="company logo">
+    <t t-set="company" t-value="(company or res_company).sudo()" />
+    <t t-set="logo_field" t-value="logo_field or 'logo'" />
+    <t t-if="company[logo_field]">
+      <img
+                t-att-src="'data:image/png;base64,%s' % to_text(company[logo_field])"
+                t-att-style="img_style"
+            />
+    </t>
+  </template>
+</odoo>

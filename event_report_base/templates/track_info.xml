@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <template id="event_tracks_by_day" name="Event detail tracks by day">
+    <t t-set="sorted_keys" t-value="tracks_by_days.pop('__sorted_keys')" />
+    <div class="tracks tracks-by-days" t-foreach="sorted_keys" t-as="day">
+      <t t-set="tracks" t-value="tracks_by_days[day]" />
+      <t t-foreach="tracks" t-as="track">
+        <h4>
+          <span t-field="track.name" />
+        </h4>
+        <dl>
+          <t t-if="request.env['website'].html_has_content(track.description)">
+            <dt class="track-desc">Description</dt>
+            <dd class="track-desc">
+              <div t-field="track.description" />
+            </dd>
+          </t>
+          <t t-if="track.partner_id or track.partner_name">
+            <dt class="track-speaker">Speaker</dt>
+            <dd class="track-speaker">
+              <span
+                                t-if="track.partner_id"
+                                t-field="track.partner_id.sudo().speaker_name_display"
+                            />
+              <span t-if="not track.partner_id" t-field="track.partner_name" />
+              <div t-field="track.partner_biography" t-if="track.partner_biography" />
+            </dd>
+          </t>
+          <t t-call="event_reports_base.track_info" />
+        </dl>
+      </t>
+    </div>
+  </template>
+
+  <template id="track_info" name="Event track info">
+    <div class="datetime time" t-if="track.date">
+      <strong>Date:</strong> <span
+                t-field="track.with_context(tz=event.date_tz).date"
+                t-options='{"format": "dd.MM.yyyy HH:mm"}'
+            />
+    </div>
+    <t t-if="not hide_duration">
+      <div class="duration time">
+        <strong>Duration:</strong> <span
+                    t-field="track.duration"
+                    t-options='{"widget": "duration", "unit": "hour", "round": "minute"}'
+                /><br />
+      </div>
+    </t>
+    <t t-if="not hide_prices">
+      <t t-set="prices" t-value="track.prices()" />
+      <t t-if="prices">
+        <div class="prices">
+          <strong>Price:</strong>
+          <span class="price-std">
+            <t t-call="event_reports_base.price">
+              <t t-set="price" t-value="prices['price']" />
+            </t>
+          </span>
+          &amp;mdash;
+          <span class="price-member">Member:
+            <t t-call="event_reports_base.price">
+              <t t-set="price" t-value="prices['price_member']" />
+            </t>
+          </span>
+        </div>
+      </t>
+    </t>
+  </template>
+
+</odoo>
