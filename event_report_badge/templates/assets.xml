@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="assets_common" inherit_id="web.report_assets_common">
+        <xpath expr="." position="inside">
+            <link
+                href="/event_report_badge/static/src/scss/variables.scss"
+                rel="stylesheet"
+                type="text/scss"
+            />
+            <link
+                href="/event_report_badge/static/src/scss/fonts.scss"
+                rel="stylesheet"
+                type="text/scss"
+            />
+            <link
+                href="/event_report_badge/static/src/scss/mixin.scss"
+                rel="stylesheet"
+                type="text/scss"
+            />
+            <link
+                href="/event_report_badge/static/src/scss/event_badge.scss"
+                rel="stylesheet"
+                type="text/scss"
+            />
+        </xpath>
+    </template>
+</odoo>
