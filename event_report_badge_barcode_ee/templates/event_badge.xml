@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+  <template id="barcode" inherit_id="event_report_badge.barcode">
+    <t id="barcode-hook" position="inside">
+      <t
+                t-set="barcode_params"
+                t-value="barcode_params or {'type': 'Code128', 'value': o.barcode, 'width': 340, 'height': 100}"
+            />
+      <t
+                t-set="barcode_url_pattern"
+                t-value="'/report/barcode/?type={type}&amp;value={value}&amp;width={width}&amp;height={height}&amp;humanreadable=1'"
+            />
+      <img
+                class="barcode barcode_vertical"
+                t-att-src="barcode_url_pattern.format(**barcode_params)"
+            />&amp;nbsp;
+    </t>
+  </template>
+
+</odoo>
