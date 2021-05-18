@@ -66,6 +66,9 @@
     .barcode_container {
         overflow: hidden;
     }
+    .company_logo img {
+        max-width: $logo-img-max-width;
+    }
     .logo_block {
         float: right;
         margin-right: 10%;

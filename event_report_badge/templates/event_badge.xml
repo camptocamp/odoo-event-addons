@@ -30,10 +30,9 @@
         </t>
         <div class="info_block width-40 height-50 right_block last_block company_logo">
           <div class="width-100 height-90">
-            <div class="width-70 height-90 image-wrapper center-block">
+            <div class="image-wrapper center-block">
               <t t-call="event_report_base.company_logo">
                 <t t-set="logo_field" t-value="'report_logo_big'" />
-                <t t-set="img_style" t-value="'width:100%;margin-top:10%'" />
               </t>
             </div>
           </div>
