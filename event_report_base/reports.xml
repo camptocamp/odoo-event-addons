@@ -8,16 +8,6 @@
         />
   </record>
 
-  <record id="report_event_nameplate" model="ir.actions.report">
-    <field name="name">Nameplate</field>
-    <field name="model">event.registration</field>
-    <field name="binding_model_id" ref="event.model_event_registration" />
-    <field name="paperformat_id" ref="paperformat_A4_portrait_no_border" />
-    <field name="report_type">qweb-pdf</field>
-    <field name="report_name">event_report_base.event_nameplate</field>
-    <field name="report_file">event_report_base.event_nameplate</field>
-  </record>
-
   <record id="report_event_info" model="ir.actions.report">
     <field name="name">Event info</field>
     <field name="model">event.event</field>

@@ -23,7 +23,6 @@
         "templates/paper_format.xml",
         "templates/assets.xml",
         "templates/report_logo.xml",
-        "templates/event_nameplate.xml",
         "templates/event_badges.xml",
         "templates/event_info.xml",
         "templates/track_info.xml",

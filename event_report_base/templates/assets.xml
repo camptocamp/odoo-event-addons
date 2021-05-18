@@ -12,11 +12,6 @@
                 type="text/less"
             />
             <link
-                href="/event_report_base/static/src/less/event_nameplate.less"
-                rel="stylesheet"
-                type="text/less"
-            />
-            <link
                 href="/event_report_base/static/src/less/event_info.less"
                 rel="stylesheet"
                 type="text/less"
