@@ -57,9 +57,6 @@
           <t t-set="event" t-value="o.event_id" />
           <div class="page event event-badge">
             <t t-call="event_report_base.event_badge_info" />
-            <t t-if="event.badge_type != 'neutral'">
-              <t t-call="event_report_base.event_badge_pax" />
-            </t>
           </div>
         </t>
       </t>
