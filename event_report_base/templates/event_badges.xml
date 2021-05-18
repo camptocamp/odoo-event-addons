@@ -20,8 +20,7 @@
           <div class="width-100 height-50">
             <strong>Participant</strong>
             <div class="event-data">
-              <span t-field='o.firstname' />
-              <span t-field='o.lastname' />
+              <span t-field='o.name' />
             </div>
           </div>
         </div>
