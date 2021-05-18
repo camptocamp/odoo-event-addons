@@ -1,0 +1,20 @@
+/*generate classes for width and height */
+
+$sizes: 10, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100;
+
+@each $size in $sizes {
+    .width-#{$size} {
+        width: $size * 1%;
+    }
+    .height-#{$size} {
+        height: $size * 1%;
+    }
+}
+.image-wrapper {
+    overflow: hidden;
+    img {
+        max-width: 100%;
+    }
+    background-size: cover;
+    background-position: center;
+}

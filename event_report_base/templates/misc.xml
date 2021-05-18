@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <template id="price">
+    <t t-if="price != 0.0">
+      <span
+                class="price"
+                t-esc="price"
+                t-options="{'widget': 'monetary', 'display_currency': currency, 'digits': (14,0)}"
+            />
+    </t>
+    <t t-else="">
+      <strong>Free</strong>
+    </t>
+  </template>
+
+</odoo>

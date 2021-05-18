@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+  <record id="event.report_event_registration_badge" model="ir.actions.report">
+    <field
+            name="paperformat_id"
+            ref="event_report_base.paperformat_A4_portrait_no_border"
+        />
+  </record>
+
+</odoo>

@@ -1,0 +1,120 @@
+.page.event-badge {
+    height: 1398px;
+    font-family: Arial;
+    position: relative;
+    .main_info {
+        padding: 3%;
+        .info_block {
+            border-left: $border;
+            border-top: $border;
+            padding: 1em;
+            overflow: hidden;
+            p {
+                margin-bottom: 0px;
+            }
+        }
+
+        .last_block {
+            border-right: $border;
+        }
+        .last_row > div {
+            border-bottom: $border;
+        }
+        .attendee_info {
+            border-top-style: none;
+            padding-top: #{"calc(1em + 3px)"};
+        }
+    }
+    .left_block {
+        float: left;
+    }
+    .right_block {
+        float: right;
+    }
+    .left_side {
+        border-top: 1px dashed $border-color;
+        border-right: 1px dashed $border-color;
+        float: left;
+    }
+    .right_side {
+        border-top: 1px dashed $border-color;
+        float: right;
+    }
+    .bar {
+        width: 67%;
+        margin-left: 33%;
+        height: 40px;
+    }
+    .green_bar {
+        background-color: #95d321;
+    }
+    .purple_bar {
+        background-color: #44276f;
+    }
+    .barcode_vertical {
+        height: 100px;
+        width: 300px;
+        margin-left: -110px;
+        margin-top: 60px;
+    }
+    .barcode_rotate {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        -webkit-transform: rotate(-90deg);
+        -webkit-transform-origin: center;
+    }
+    .barcode_container {
+        overflow: hidden;
+    }
+    .company_logo img {
+        max-width: $logo-img-max-width;
+    }
+    .logo_block {
+        float: right;
+        margin-right: 10%;
+    }
+    .event-data {
+        color: $data-font-color;
+        font-weight: bold;
+    }
+    .date_block {
+        span.day {
+            text-transform: capitalize;
+        }
+    }
+    .center {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        width: 100%;
+    }
+    .title_label {
+        padding-bottom: 10px;
+    }
+    .title_block {
+        font-weight: bold;
+        font-size: 1.5em;
+        line-height: 1;
+        position: relative;
+    }
+    .pax_name {
+        position: relative;
+        overflow: hidden;
+        h3 {
+            font-size: 3em;
+            font-weight: bold;
+            color: $data-font-color;
+            line-height: 1;
+            text-align: center;
+        }
+        .company_name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: $data-font-color;
+            line-height: 1;
+            text-align: center;
+            display: block;
+        }
+    }
+}
