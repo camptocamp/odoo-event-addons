@@ -28,10 +28,13 @@
       <div class="width-100 height-40 last_row clearfix">
         <div class="info_block height-100 width-10 left_block barcode_container">
           <div class="barcode_rotate width-100 height-100">
+            TODO: barcode
+            <!-- FIXME: this is from enterprise event_barcode
             <img
-                            class="barcode barcode_vertical"
-                            t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=1' % ('Code128', o.barcode, 340, 100)"
-                        />&amp;nbsp;
+              class="barcode barcode_vertical"
+              t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=1' % ('Code128', o.barcode, 340, 100)"
+              />&amp;nbsp;
+             -->
           </div>
         </div>
         <t t-call="event_report_base.organizer_map" />
