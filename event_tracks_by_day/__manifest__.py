@@ -8,7 +8,7 @@
     "author": "Camptocamp",
     "license": "LGPL-3",
     "category": "Others",
-    "depends": ["event"],
+    "depends": ["event", "website_event_track"],
     "website": "https://github.com/camptocamp/odoo-event-addons",
     "data": [],
     "installable": True,
