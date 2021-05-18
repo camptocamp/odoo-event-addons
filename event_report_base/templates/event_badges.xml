@@ -66,136 +66,21 @@
     </t>
   </template>
 
-  <template id="event_badge_pax" name="Event Badge pax">
-    <div class="pax_info height-50 width-100">
-      <div class="left_side height-100 width-50">
-        <t t-call="event_report_base.event_badge_pax_info" />
-      </div>
-      <div class="right_side height-100 width-50">
-        <t t-call="event_report_base.event_badge_pax_info" />
-      </div>
-    </div>
-  </template>
-
-  <template id="event_badge_pax_info" name="Event Badge pax specific info">
-    <div class="width-100 height-25">
-      <div class="width-50 height-100 left_block">
-        <t
-                    t-if="event.badge_type in ['nominative_logo_training','nominative_nologo_training']"
-                >
-          <div class="bar green_bar" />
-        </t>
-        <t t-else="">
-          <div class="bar purple_bar" />
-        </t>
-      </div>
-    </div>
-    <div class="width-100 height-50 pax_name">
-      <div class="center">
-        <div>
-          <h3>
-            <span t-field='o.firstname' />
-            <span t-field='o.lastname' />
-          </h3>
-          <span class="company_name" t-field='o.partner_id.name' />
-        </div>
-      </div>
-    </div>
-    <div class="width-100 height-25">
-      <t
-                t-if="event.badge_type in ['nominative_logo_training','nominative_logo_event']"
-            >
-        <div style="padding-right: 5%;">
-          <t t-call="event_report_base.company_logo">
-            <t t-set="logo_field" t-value="'report_logo_big'" />
-            <t t-set="img_style" t-value="'width:60%; float: right;'" />
-          </t>
-        </div>
-      </t>
-    </div>
-  </template>
-
   <template id="event_badge_event_data" name="Event data">
-    <t t-set="tracks" t-value="o.track_ids" />
-    <div class="width-60 height-100 left_block">
+    <div class="event_badge_event_data width-60 height-100 left_block">
       <div class="info_block width-100 height-50 title_block">
-        <div t-if="labels" class="title_label">
+        <div t-if="labels and event.event_type_id" class="title_label">
           <strong t-field="event.event_type_id.name" />
         </div>
         <div class="title_block">
           <div>
             <p t-field="event.name" />
-            <!-- NOTE: this makes poor sense if the track name is the same of the event -->
-            <p t-if="tracks" t-fields="tracks[0].name" />
           </div>
         </div>
       </div>
-      <t t-call="event_report_base.event_tracks_info" />
     </div>
   </template>
-
-  <template id="event_tracks_info" name="Event tracks">
-    <t t-if="tracks">
-      <t t-set="track" t-value="tracks[0]" />
-      <div class="info_block width-50 height-50 left_block date_block">
-        <strong t-if="labels">Date and Time</strong>
-        <div class="event-data">
-          <t t-if="event.one_day">
-            <span
-                            class="day"
-                            t-field="track.date"
-                            t-field-options='{"widget": "date", "format": "EEEE"}'
-                        />
-            <span
-                            class="date"
-                            t-field="track.date"
-                            t-field-options='{"widget": "date", "format": "d MMMM yyyy"}'
-                        />
-            <br /><span t-field="track.date" t-field-options='{"format": "HH:mm"}' />
-          </t>
-          <t t-else="">
-            <p>From
-            <span
-                                class="day"
-                                t-field="track.date"
-                                t-field-options='{"widget": "date", "format": "EEEE"}'
-                            />
-            <span
-                                class="date"
-                                t-field="track.date"
-                                t-field-options='{"widget": "date", "format": "d MMMM yyyy"}'
-                            /></p>
-            <p><span t-field="track.date" t-field-options='{"format": "HH:mm"}' /></p>
-            <p>to
-            <span
-                                class="day"
-                                t-field="track.date"
-                                t-field-options='{"widget": "date", "format": "EEEE"}'
-                            />
-            <span
-                                class="date"
-                                t-field="track.date"
-                                t-field-options='{"widget": "date", "format": "d MMMM yyyy"}'
-                            /></p>
-            <p><span
-                                t-field="event.date_end"
-                                t-field-options='{"format": "HH:mm"}'
-                            /></p>
-          </t>
-        </div>
-      </div>
-      <div class="info_block width-50 height-50 right_block address_block">
-        <strong t-if="labels">Place</strong>
-        <div class="event-data">
-          <span t-field="track.location_id" />
-          <address
-                        t-field="event.address_id"
-                        t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'
-                    />
-        </div>
-      </div>
-    </t>
-  </template>
+  
 
   <template id="organizer_map" name="Organizer map">
     <div class="info_block height-100 width-90 last_block">

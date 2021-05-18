@@ -11,7 +11,6 @@
     "category": "Others",
     "depends": [
         "event",
-        "event_tracks_by_day",
         # 'event_barcode',  # FIXME: this is enterprise!
         # 'website_sale',  # TODO: required?
     ],
