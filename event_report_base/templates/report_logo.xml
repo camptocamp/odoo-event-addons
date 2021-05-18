@@ -11,10 +11,7 @@
     <t t-set="company" t-value="(company or res_company).sudo()" />
     <t t-set="logo_field" t-value="logo_field or 'logo'" />
     <t t-if="company[logo_field]">
-      <img
-                t-att-src="'data:image/png;base64,%s' % to_text(company[logo_field])"
-                t-att-style="img_style"
-            />
+      <img t-att-src="image_data_uri(company[logo_field])" t-att-style="img_style" />
     </t>
   </template>
 </odoo>
