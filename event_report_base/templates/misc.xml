@@ -6,7 +6,7 @@
       <span
                 class="price"
                 t-esc="price"
-                t-options="{'widget': 'monetary', 'display_currency': website.currency_id, 'digits': (14,0)}"
+                t-options="{'widget': 'monetary', 'display_currency': currency, 'digits': (14,0)}"
             />
     </t>
     <t t-else="">

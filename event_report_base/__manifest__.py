@@ -9,22 +9,15 @@
     "author": "Camptocamp",
     "license": "LGPL-3",
     "category": "Others",
-    "depends": [
-        "event",
-        # 'event_barcode',  # FIXME: this is enterprise!
-        # 'website_sale',  # TODO: required?
-    ],
+    "depends": ["event"],
     "website": "https://github.com/camptocamp/odoo-event-addons",
     "data": [
         # View
         "views/company.xml",
         # Template
         "templates/paper_format.xml",
-        "templates/assets.xml",
         "templates/report_logo.xml",
         "templates/misc.xml",
-        # Reports
-        "reports.xml",
     ],
     "installable": True,
 }
