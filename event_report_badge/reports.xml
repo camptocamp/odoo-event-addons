@@ -6,6 +6,10 @@
             name="paperformat_id"
             ref="event_report_base.paperformat_A4_portrait_no_border"
         />
+    <!-- Use our own template fully to not have conflicts w/ other modules overriding the original one -->
+    <field name="report_name">event_report_badge.event_badge_main</field>
+    <!-- Irrelevant as this is a qweb report but let's put it clear is not the original anymore -->
+    <field name="report_file">event_report_badge.event_badge_main</field>
   </record>
 
 </odoo>
