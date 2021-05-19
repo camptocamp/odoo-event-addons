@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-  <template
-        id="event_badge_main"
-        name="Event Badge"
-        inherit_id="event.event_registration_report_template_badge"
-    >
-    <t t-call="web.basic_layout" position="replace">
-      <t t-call="web.basic_layout">
-        <t t-foreach="docs" t-as="o">
-          <t
-                        t-set="o"
-                        t-value="o.with_context(lang=o.partner_id.lang or 'fr_FR',tz=o.event_id.date_tz)"
-                    />
-          <t t-set="event" t-value="o.event_id" />
-          <div class="page event event-badge">
-            <t t-call="event_report_badge.event_badge_info" />
-          </div>
-        </t>
+  <template id="event_badge_main" name="Event Badge main">
+    <t t-call="web.basic_layout">
+      <t t-foreach="docs" t-as="o">
+        <t
+                    t-set="o"
+                    t-value="o.with_context(lang=o.partner_id.lang or 'fr_FR',tz=o.event_id.date_tz)"
+                />
+        <t t-set="event" t-value="o.event_id" />
+        <div class="page event event-badge">
+          <t t-call="event_report_badge.event_badge_info" />
+        </div>
       </t>
     </t>
   </template>
