@@ -10,7 +10,7 @@
                 />
         <t t-set="event" t-value="o.event_id" />
         <div class="page event event-badge">
-          <t t-call="event_report_badge.event_badge_info" />
+          <t t-call="event_report_badge.event_badge_info" t-lang="o.partner_id.lang" />
         </div>
       </t>
     </t>
